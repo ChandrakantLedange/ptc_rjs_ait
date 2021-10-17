@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import {MyContext} from './context/MyContext';
+import Profile from './components/Profile';
+import Login from './components/Login';
 
 function App() {
+  const [userName, setUserName] = useState("");
+  const [showProfile, setShowProfile] = useState(false);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MyContext.Provider
+      value={{userName,setUserName,showProfile,setShowProfile}}
+      >
+        {showProfile? <Profile/>:<Login/>}
+      </MyContext.Provider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
