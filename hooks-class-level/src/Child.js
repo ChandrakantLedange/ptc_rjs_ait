@@ -37,6 +37,18 @@ class Child extends Component{
     console.log("Child componentDidMount called")
   }
 
+  //5.componentWillReceiveProps
+  componentWillReceiveProps(){
+    console.log("child componentWillReceiveProps called");
+  }
+
+  //6. take permission to updatation
+  shouldComponentUpdate(){
+    console.log("child shouldComponentUpdate called");
+    return true;
+   
+  }
+
   //3.render  After componentWillMount
   // if any change detected in state and props component will render again.(it is manadatory)
   //never set define hare(leads to infinite loop)

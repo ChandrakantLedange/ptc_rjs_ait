@@ -46,6 +46,33 @@ class App extends Component{
     })
   }
 
+  //5 componentWillReceiveProps if component will receive any props
+  componentWillReceiveProps(){
+    console.log("parent componentWillReceiveProps called");
+  }
+
+  //6. take permission to updatation
+  shouldComponentUpdate(){
+    console.log("parent shouldComponentUpdate called");
+    return true;
+   
+  }
+
+  //7.
+  componentDidUpdate(){
+
+  }
+
+  //8.
+  componentWillUpdate(){
+
+  }
+  
+  //9.
+  componentWillUnmount(){
+    
+  }
+
   //3.render  After componentWillMount
   // if any change detected in state and props component will render again.(it is manadatory)
   //never set define hare(leads to infinite loop)
